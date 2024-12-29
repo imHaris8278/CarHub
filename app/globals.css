@@ -198,3 +198,17 @@
 .search-manufacturer__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
+
+.loader {
+  @apply border-4 border-solid border-[#a2b1a6bb] border-t-[#2b59ff] rounded-full w-12 h-12;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

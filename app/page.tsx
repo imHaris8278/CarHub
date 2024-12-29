@@ -1,10 +1,9 @@
 "use client";
-
 import { HomeProps } from "@types";
 import { fuels, yearsOfProduction } from "@constants";
 import { CarCard, ShowMore, SearchBar, CustomFilter, Hero } from "@components";
 import { useFetchCarsQuery } from "../utils/index";
-import { useState } from "react";
+import Loader from "@components/Loader";
 
 export default function Home({ searchParams }: HomeProps) {
   const { manufacturer, year, fuel, limit, model } = searchParams;
@@ -24,7 +23,7 @@ export default function Home({ searchParams }: HomeProps) {
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (error) {
